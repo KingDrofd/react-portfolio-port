@@ -5,7 +5,7 @@ import threeDDesign from "./images/icons/3d_design.png";
 import backend from "./images/icons/graphic_design.png";
 const Services = () => {
   return (
-    <div className="services-section">
+    <div id="services-id" className="services-section">
       <div className="section-title">
         <div className="title-small-1">
           <div className="title-small-bar-1"></div>
@@ -23,21 +23,21 @@ const Services = () => {
           </div>
           <h1>Web & Mobile Design</h1>
         </div>
-        <div className="gap"></div>
+
         <div className="offering-container green">
           <div className="offering-img">
             <img src={uiDesign} alt="" style={{ width: "80px" }} />
           </div>
           <h1>Ui Design</h1>
         </div>
-        <div className="gap"></div>
+
         <div className="offering-container red">
           <div className="offering-img">
             <img src={threeDDesign} alt="" style={{ width: "80px" }} />
           </div>
           <h1>3D Design</h1>
         </div>
-        <div className="gap"></div>
+
         <div className="offering-container yellow">
           <div className="offering-img">
             <img src={backend} alt="" style={{ width: "80px" }} />

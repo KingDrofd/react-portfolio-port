@@ -3,6 +3,13 @@ import letter from "./images/icons/letter.png";
 import handshake from "./images/handshake.png";
 import Projects from "./Projects";
 const ProjectEstimate = () => {
+  const scrollToContactSection = () => {
+    const contactSection = document.getElementById("contact-section-id");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="project-estimate">
       <div className="project-estimate-container">
@@ -16,7 +23,7 @@ const ProjectEstimate = () => {
           className="about-buttons"
           style={{ marginBottom: "0px", marginLeft: "60px" }}
         >
-          <div className="hire-me-button">
+          <div className="hire-me-button" onClick={scrollToContactSection}>
             <img src={handshake} alt="Handshake" />
             <h2>Contact Me!</h2>
           </div>
