@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import linkedIn from "./images/Linkedin-logo.png";
 import discord from "./images/Discord-Emblem.png";
 import gitHub from "./images/github-mark.png";
@@ -7,6 +7,14 @@ const Contact = () => {
   const openLink = (link: string) => {
     window.open(link, "_blank"); // Opens the link in a new window
   };
+
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="contact-section">
       <a id="contact-section-id"></a>
@@ -98,18 +106,28 @@ const Contact = () => {
         <div className="gap" style={{ height: "50px" }}></div>
         <div
           className="contact-form-field"
-          style={{ width: "950px", maxWidth: "950px" }}
+          style={{
+            width: width < 1100 ? "100%" : "950px",
+            maxWidth: width < 1100 ? "100%" : "950px",
+            marginTop: width < 700 ? "20px" : "0",
+            marginLeft: width < 700 ? "20px" : "0",
+          }}
         >
           <div
             className="custom-input"
-            style={{ width: "950px", maxWidth: "950px" }}
+            style={{
+              width: width < 1100 ? "100%" : "950px",
+              maxWidth: width < 1100 ? "100%" : "950px",
+            }}
           >
             <textarea
-              id="input1"
-              placeholder="Enter Project Budget"
-              style={{ width: "900px", maxWidth: "900px" }}
+              placeholder="Enter Project Description"
+              style={{
+                width: width < 1100 ? "80%" : "900px",
+                maxWidth: width < 1100 ? "80%" : "900px",
+              }}
             />
-            <label htmlFor="input1">Project Budget</label>
+            <label htmlFor="input1">Project Description</label>
           </div>
         </div>
         <div className="gap" style={{ height: "20px" }}></div>
@@ -119,6 +137,7 @@ const Contact = () => {
             <h2>Send</h2>
           </div>
         </div>
+        <div className="gap" style={{ height: "30px" }}></div>
       </div>
     </div>
   );

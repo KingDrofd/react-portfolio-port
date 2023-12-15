@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import letter from "./images/icons/letter.png";
 import handshake from "./images/handshake.png";
 import Projects from "./Projects";
@@ -10,10 +10,17 @@ const ProjectEstimate = () => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="project-estimate">
       <div className="project-estimate-container">
-        <img src={letter} alt="" style={{ width: "90px" }} />
+        <img className="project-estimate-container-img" src={letter} alt="" />
         <div className="div-seperator"></div>
         <div className="project-estimate-text">
           <div className="project-estimate-h1">Starting a new project?</div>
@@ -21,10 +28,18 @@ const ProjectEstimate = () => {
         </div>
         <div
           className="about-buttons"
-          style={{ marginBottom: "0px", marginLeft: "60px" }}
+          style={{
+            marginBottom: "0px",
+            marginLeft: width < 700 ? "0px" : "60px",
+            marginTop: width < 700 ? "30px" : "0px",
+          }}
         >
           <div className="hire-me-button" onClick={scrollToContactSection}>
-            <img src={handshake} alt="Handshake" />
+            <img
+              className="hire-me-button-img"
+              src={handshake}
+              alt="Handshake"
+            />
             <h2>Contact Me!</h2>
           </div>
         </div>

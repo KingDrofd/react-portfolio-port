@@ -16,14 +16,14 @@ import SimpleBar from "simplebar";
 function App() {
   return (
     <div className="App">
-      {/* <Home />
-      <About /> */}
-      {/* <AboutButtons /> */}
+      <Home />
+      <About />
+      <AboutButtons />
       <Services />
-      {/* <ProjectEstimate />
+      <ProjectEstimate />
       <Testimonial />
       <Contact />
-      <ScrollToTopButton /> */}
+      <ScrollToTopButton />
     </div>
   );
 }

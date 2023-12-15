@@ -22,11 +22,11 @@ const Home = () => {
             <h2>Flutter Developer!</h2>
           </div>
 
-          <div className="music-player">
+          {/* <div className="music-player">
             <div className="amber-container">
               <h2>Hello Mommy</h2>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="space-top-section"></div>
         <div className="container">

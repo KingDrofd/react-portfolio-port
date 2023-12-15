@@ -14,16 +14,19 @@ const AboutButtons = () => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <div className="about-buttons">
       <div className="hire-me-button" onClick={scrollToContactSection}>
-        <img src={handshake} alt="Handshake" />
+        <img className="hire-me-button-img" src={handshake} alt="Handshake" />
+
         <h2>Hire Me!</h2>
       </div>
 

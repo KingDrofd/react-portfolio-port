@@ -19,28 +19,28 @@ const Services = () => {
       <div className="oferrings-container">
         <div className="offering-container blue">
           <div className="offering-img">
-            <img src={webDesign} alt="" style={{ width: "80px" }} />
+            <img src={webDesign} alt="" />
           </div>
           <h1>Web & Mobile Design</h1>
         </div>
 
         <div className="offering-container green">
           <div className="offering-img">
-            <img src={uiDesign} alt="" style={{ width: "80px" }} />
+            <img src={uiDesign} alt="" />
           </div>
           <h1>Ui Design</h1>
         </div>
 
         <div className="offering-container red">
           <div className="offering-img">
-            <img src={threeDDesign} alt="" style={{ width: "80px" }} />
+            <img src={threeDDesign} alt="" />
           </div>
           <h1>3D Design</h1>
         </div>
 
         <div className="offering-container yellow">
           <div className="offering-img">
-            <img src={backend} alt="" style={{ width: "80px" }} />
+            <img src={backend} alt="" />
           </div>
           <h1>Backend</h1>
         </div>
